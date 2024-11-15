@@ -12,9 +12,11 @@ export function compilerSfc(source: string, id: string) {
   const isScoped = descriptor.styles.some(s => s.scoped)
   errors.forEach(e => console.error(e))
   return {
-    sfcAppBlock: scriptCompiler(descriptor, id),
-    sfcTemplateCompileResults: templateCompiler(descriptor, id, filename),
-    sfcStyleCompileResultsList: descriptor.styles.map(s => styleCompiler(s, id, filename)),
+    compiled: {
+      sfcAppBlock: scriptCompiler(descriptor, id),
+      sfcTemplateCompileResults: templateCompiler(descriptor, id, filename),
+      sfcStyleCompileResultsList: descriptor.styles.map(s => styleCompiler(s, id, filename)),
+    },
     isScoped,
   }
 }

@@ -5,16 +5,26 @@ import { scriptTransformer, stylesTransformer, templateTransformer } from '@/tra
 export interface Options {
   id?: string
   appName?: string
-  cache: Record<string, any>
+  cache: Record<string, ConvertedResult>
+}
+interface ConvertedResult {
+  code: {
+    app: string
+    render: string
+    css: string
+  }
+  isScoped: boolean
 }
 export function convertor(sfcSource: string, { id = 'sfc2esm', appName = id, cache }: Options = { cache: {} }) {
   if (cache[sfcSource])
     return cache[sfcSource]
-  const { isScoped, ...c } = compilerSfc(sfcSource, id)
-  return cache[sfcSource] = {
-    appCode: scriptTransformer(c.sfcAppBlock, appName),
-    renderCode: templateTransformer(c.sfcTemplateCompileResults, appName),
-    cssCode: stylesTransformer(c.sfcStyleCompileResultsList),
+  const { isScoped, compiled: c } = compilerSfc(sfcSource, id)
+  return {
+    code: {
+      app: scriptTransformer(c.sfcAppBlock, appName),
+      render: templateTransformer(c.sfcTemplateCompileResults, appName),
+      css: stylesTransformer(c.sfcStyleCompileResultsList),
+    },
     isScoped,
   }
 }
