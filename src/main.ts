@@ -16,5 +16,6 @@ export function createConvertor({ id = 'sfc2esm', appName = id }: Options = {}) 
       const { initCode, createAppCode, scopeIdCode } = generator({ id, appName, isScoped, mount })
       return [initCode, appCode, renderCode, scopeIdCode, createAppCode].join('\n')
     },
+    sfc2mult: (sfcSource: string) => convertor(sfcSource, { id, appName }),
   }
 }
