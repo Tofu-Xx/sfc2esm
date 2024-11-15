@@ -3,11 +3,13 @@ import { scriptCompiler } from './compiler/scriptCompiler'
 import { styleCompiler } from './compiler/styleCompiler'
 import { templateCompiler } from './compiler/templateCompiler'
 import { sfcParse } from './sfcParse'
+import { getRootTagName } from './tools/getRootTagName'
 import { scriptTransformer } from './transformer/scriptTransformer'
 import { stylesTransformer } from './transformer/stylesTransformer'
 import { templateTransformer } from './transformer/templateTransformer'
 
 export function converter(sfcSource: string, { id = 'sfc2esm', appName = id }: { id?: string, appName?: string } = {}) {
+  getRootTagName(sfcSource).includes('script') || (sfcSource = `<script>/* empty script */</script>${sfcSource}`)
   const { isScoped, ...c } = compilerSfc(sfcSource, id)
   return {
     appCode: scriptTransformer(c.sfcAppBlock, appName),
