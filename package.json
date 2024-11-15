@@ -1,5 +1,5 @@
 {
-  "name": "sfc2sem",
+  "name": "sfc2esm",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@9.13.2",
@@ -7,12 +7,12 @@
   "author": "tofu-xx <tofu-xx@foxmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/tofu-xx",
-  "homepage": "https://github.com/tofu-xx/sfc2sem#readme",
+  "homepage": "https://github.com/tofu-xx/sfc2esm#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tofu-xx/sfc2sem.git"
+    "url": "git+https://github.com/tofu-xx/sfc2esm.git"
   },
-  "bugs": "https://github.com/tofu-xx/sfc2sem/issues",
+  "bugs": "https://github.com/tofu-xx/sfc2esm/issues",
   "keywords": ["vuejs", "vue", "converter", "sfc", "esm"],
   "exports": {
     ".": {
