@@ -12,7 +12,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/main.ts',
-      name: 'sfc2sem',
+      name: 'sfc2esm',
       formats: ['es', 'umd'],
       fileName: f => `main.${f}.js`,
     },
