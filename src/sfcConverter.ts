@@ -1,5 +1,5 @@
 import type { SFCAppBlock } from '@/compiler/types'
-import { APP_VAR_NAME, CREATE_APP_CODE, INIT_CODE, SCOPED_ID_CODE } from '@/data'
+import { generator } from '@/generator'
 import { parse, type SFCTemplateCompileResults } from '@vue/compiler-sfc'
 import { scriptCompiler } from './compiler/scriptCompiler'
 import { templateCompiler } from './compiler/templateCompiler'
@@ -15,15 +15,17 @@ export function sfcParse(source: string, id: string) {
   return { descriptor, info }
 }
 
-export function sfcConverter(source: string, id = 'sfc2esm') {
+export function sfcConverter(source: string, id = 'sfc2esm', appName = id) {
   const { descriptor, info } = sfcParse(source, id)
   const sfcAppBlock = scriptCompiler(descriptor, info)
   const sfcTemplateCompileResults = templateCompiler(descriptor.template, info)
+  const isScoped = descriptor.styles.some(s => s.scoped)
+  const { initCode, createAppCode, scopeIdCode } = generator({ id, appName, isScoped })
   return [
-    INIT_CODE,
-    scriptTransformer(sfcAppBlock),
-    templateTransformer(sfcTemplateCompileResults),
-    sfcAppBlock.isScoped ? SCOPED_ID_CODE : '',
-    CREATE_APP_CODE,
+    initCode,
+    scriptTransformer(sfcAppBlock, appName),
+    templateTransformer(sfcTemplateCompileResults, appName),
+    scopeIdCode,
+    createAppCode,
   ].join('\n')
 }

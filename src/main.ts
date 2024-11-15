@@ -1,5 +1,4 @@
-import { sfcCode } from '../tmp/css-bind.html'
+import { sfcCode } from '../tmp/css-scoped.html'
 import { sfcConverter } from './sfcConverter'
 
-const a = sfcConverter(sfcCode)
-console.log(a)
+// console.log(sfcConverter(sfcCode))

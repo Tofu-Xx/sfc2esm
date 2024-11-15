@@ -7,6 +7,6 @@ export function scriptCompiler(descriptor: SFCDescriptor, info: Info) {
     id: info.id,
     isProd: !__IS_DEV__,
   })
-  sfcAppBlock.isScoped = descriptor.styles.some(s => s.scoped)
+  // sfcAppBlock.isScoped = descriptor.styles.some(s => s.scoped)
   return sfcAppBlock
 }

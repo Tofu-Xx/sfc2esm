@@ -1,9 +1,8 @@
 import type { SFCAppBlock } from '@/compiler/types'
-import { APP_VAR_NAME } from '@/data'
 
-export function scriptConverter({ content }: SFCAppBlock) {
+export function scriptConverter({ content }: SFCAppBlock, appName: string) {
   return content
-    .replace('export default', `${APP_VAR_NAME} =`)
+    .replace('export default', `${appName} =`)
     .replace(/Object\.defineProperty\(__returned__.*/, '')
 }
 

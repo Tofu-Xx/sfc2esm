@@ -1,6 +1,5 @@
 import type { SFCStyleBlock } from '@vue/compiler-sfc'
 import type { CompiledSFC, SFCAppBlock } from './types'
-import { REPO_NAME } from '@/data'
 import { compileScript, compileStyle, compileTemplate, parse } from '@vue/compiler-sfc'
 import { scriptCompiler } from './scriptCompiler'
 import { styleCompiler } from './styleCompiler'
