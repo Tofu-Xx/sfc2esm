@@ -1,7 +1,7 @@
 {
   "name": "sfc2sem",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@9.13.2",
   "description": "Code convertor from SFC to ESM | 由SFC到ESM的代码转换器",
   "author": "tofu-xx <tofu-xx@foxmail.com>",
