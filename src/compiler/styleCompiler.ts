@@ -1,7 +1,6 @@
-import type { Info } from './types'
 import { compileStyle, type SFCStyleBlock } from '@vue/compiler-sfc'
 
-/*  */const __IS_DEV__ = false
+// /*  */const __IS_DEV__ = false
 export function styleCompiler(style: SFCStyleBlock, id: string, filename: string) {
   const sfcStyleCompileResults = compileStyle({
     id,
@@ -10,6 +9,6 @@ export function styleCompiler(style: SFCStyleBlock, id: string, filename: string
     scoped: style.scoped,
     isProd: !__IS_DEV__,
   })
-  sfcStyleCompileResults.errors.forEach(e => console.warn(e))
+  sfcStyleCompileResults.errors.forEach(e => console.error(e))
   return sfcStyleCompileResults
 }

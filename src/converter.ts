@@ -1,8 +1,4 @@
 import { compilerSfc } from './compiler'
-import { scriptCompiler } from './compiler/scriptCompiler'
-import { styleCompiler } from './compiler/styleCompiler'
-import { templateCompiler } from './compiler/templateCompiler'
-import { sfcParse } from './sfcParse'
 import { getRootTagName } from './tools/getRootTagName'
 import { scriptTransformer } from './transformer/scriptTransformer'
 import { stylesTransformer } from './transformer/stylesTransformer'
