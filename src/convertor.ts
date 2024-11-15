@@ -4,7 +4,7 @@ import { scriptTransformer } from './transformer/scriptTransformer'
 import { stylesTransformer } from './transformer/stylesTransformer'
 import { templateTransformer } from './transformer/templateTransformer'
 
-export function converter(sfcSource: string, { id = 'sfc2esm', appName = id }: { id?: string, appName?: string } = {}) {
+export function convertor(sfcSource: string, { id = 'sfc2esm', appName = id }: { id?: string, appName?: string } = {}) {
   getRootTagName(sfcSource).includes('script') || (sfcSource = `<script>/* empty script */</script>${sfcSource}`)
   const { isScoped, ...c } = compilerSfc(sfcSource, id)
   return {
