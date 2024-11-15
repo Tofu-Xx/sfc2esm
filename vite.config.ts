@@ -16,7 +16,8 @@ export default defineConfig({
       formats: ['es', 'umd'],
       fileName: f => `main.${f}.js`,
     },
-    target: 'es2015',
+    target: 'esnext',
+    minify: false,
   },
   esbuild: {
     charset: 'ascii',

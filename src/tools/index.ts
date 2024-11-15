@@ -1,2 +1,2 @@
-export * from './getRootTagName'
+export * from './getTagName'
 export * from './h'
