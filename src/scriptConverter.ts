@@ -5,13 +5,5 @@ import { closeTag } from './tools/toSfcCode'
 
 export function scriptConverter(scriptSource: string, { id = 'sfc2esm', appName = id, setup = true }: ScriptConverterOptions = {}) {
   const source = closeTag(`<script${setup ? ' setup' : ''}>`, scriptSource)
-  const a = converter(source, { id, appName })
-  return a
-  // const { content } = scriptCompiler(sfcParse(source, id))
-  // return content
-  //   .replace('export default', `${appName} =`)
-  //   .replace(/Object\.defineProperty\(__returned__.*/, '')
+  return converter(source, { id, appName }).appCode
 }
-
-/* const source = toSfcCode(scriptSource, opt.setup ? '<script setup>' : '<script>')
-  const { sfcAppBlock: { content } } = compilerSfc(source, opt.id) */

@@ -6,6 +6,5 @@ import { closeTag } from './tools/toSfcCode'
 
 export function templateConverter(templateSource: string, { id = 'sfc2esm', appName = id }: templateConverterOptions = {}) {
   const source = closeTag('<template>', templateSource)
-  const a = converter(source, { id, appName })
-  return a
+  return converter(source, { id, appName }).renderCode
 }
