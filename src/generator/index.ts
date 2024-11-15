@@ -2,8 +2,9 @@ export interface generatorOptions {
   id: string
   appName?: string
   isScoped?: boolean
+  mount?: string
 }
-export function generator({ id, appName = id, isScoped = false }: generatorOptions) {
+export function generator({ id, appName = id, isScoped = false, mount = '#app' }: generatorOptions) {
   return {
     initCode: `let ${appName} = {}` as const,
     createAppCode: `
@@ -15,7 +16,7 @@ export function generator({ id, appName = id, isScoped = false }: generatorOptio
           fallback: _h('div', 'Loading...'),
         })
         : ${appName}
-      )).mount(document.body)
+      )).mount("${mount}")
     ` as const,
     scopeIdCode: isScoped ? (`${appName}.__scopeId = "data-v-${id}"` as const) : '' as const,
   }
