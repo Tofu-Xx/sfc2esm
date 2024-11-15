@@ -55,8 +55,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vue/compiler-sfc": "^3.5.13",
-    "cheerio": "^1.0.0"
+    "@vue/compiler-sfc": "^3.5.13"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.1",
