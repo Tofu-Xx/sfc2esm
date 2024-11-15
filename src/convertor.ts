@@ -1,8 +1,6 @@
-import { compilerSfc } from './compiler'
-import { getRootTagName } from './tools/getRootTagName'
-import { scriptTransformer } from './transformer/scriptTransformer'
-import { stylesTransformer } from './transformer/stylesTransformer'
-import { templateTransformer } from './transformer/templateTransformer'
+import { compilerSfc } from '@/compiler'
+import { getRootTagName } from '@/tools'
+import { scriptTransformer, stylesTransformer, templateTransformer } from '@/transformer'
 
 export function convertor(sfcSource: string, { id = 'sfc2esm', appName = id }: { id?: string, appName?: string } = {}) {
   getRootTagName(sfcSource).includes('script') || (sfcSource = `<script>/* empty script */</script>${sfcSource}`)

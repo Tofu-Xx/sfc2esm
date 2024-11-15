@@ -1,4 +1,4 @@
-import type { SFCDescriptor, SFCTemplateBlock } from '@vue/compiler-sfc'
+import type { SFCDescriptor } from '@vue/compiler-sfc'
 import { compileTemplate } from '@vue/compiler-sfc'
 
 /*  */const __IS_DEV__ = false

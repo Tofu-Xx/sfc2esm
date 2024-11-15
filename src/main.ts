@@ -1,7 +1,6 @@
-import { sfcCode } from '../tmp/css-scoped.html'
-import { convertor } from './convertor'
-import { generator } from './generator'
-import { h } from './tools/h'
+import { convertor } from '@/convertor'
+import { generator } from '@/generator'
+import { h } from '@/tools'
 
 export interface Options { id?: string, appName?: string }
 export function createConvertor({ id = 'sfc2esm', appName = id }: Options = {}) {
@@ -19,25 +18,3 @@ export function createConvertor({ id = 'sfc2esm', appName = id }: Options = {}) 
     },
   }
 }
-
-// console.log(esmConverter(sfcCode))
-// console.log(
-//   scriptConverter(`
-//     import { ref } from 'vue';
-//     const count = ref(0);`,
-//   ),
-// )
-// console.log(
-//   templateConverter(`
-//     <button @click="count++">{{ count }}</button>
-//   `),
-// )
-// console.log(
-//   styleConverter(`
-//     @import "https://unpkg.com/@tofukit/resetcss";
-
-//     button {
-//       margin: auto;
-//     }
-//   `, { isScoped: true }),
-// )

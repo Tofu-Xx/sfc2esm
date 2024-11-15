@@ -1,1 +1,1 @@
-declare type Fn<T extends any[] = any[], R = any> = (...args: T) => R
+// declare type Fn<T extends any[] = any[], R = any> = (...args: T) => R
