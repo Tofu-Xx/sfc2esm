@@ -5,13 +5,15 @@ import { scriptCompiler } from './scriptCompiler'
 import { styleCompiler } from './styleCompiler'
 import { templateCompiler } from './templateCompiler'
 
-export function compilerSfc(source: string, id: string): CompiledSFC {
-  const info = { id, filename: `${id}.vue` }
-  const { descriptor, errors } = parse(source, { filename: info.filename })
+export function compilerSfc(source: string, id: string) {
+  const filename = `${id}.vue`
+  const { descriptor, errors } = parse(source, { filename })
+  const isScoped = descriptor.styles.some(s => s.scoped)
   errors.forEach(e => console.warn(e))
   return {
-    sfcAppBlock: scriptCompiler({ descriptor, info }),
-    sfcTemplateCompileResults: templateCompiler({ descriptor, info }),
-    sfcStyleCompileResultsList: descriptor.styles.map(s => styleCompiler(s, info)),
+    sfcAppBlock: scriptCompiler(descriptor, id),
+    sfcTemplateCompileResults: templateCompiler(descriptor, id, filename),
+    sfcStyleCompileResultsList: descriptor.styles.map(s => styleCompiler(s, id, filename)),
+    isScoped,
   }
 }
