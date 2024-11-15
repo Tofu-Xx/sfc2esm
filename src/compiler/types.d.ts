@@ -1,8 +1,5 @@
-import type { SFCScriptBlock, SFCStyleCompileResults, SFCTemplateCompileResults } from '@vue/compiler-sfc'
+import type { SFCDescriptor, SFCScriptBlock, SFCStyleCompileResults, SFCTemplateCompileResults } from '@vue/compiler-sfc'
 
-export interface SFCAppBlock extends SFCScriptBlock {
-  isScoped?: boolean
-}
 export interface CompiledSFC {
   sfcStyleCompileResultsList: SFCStyleCompileResults[]
   sfcAppBlock: SFCAppBlock
@@ -11,4 +8,8 @@ export interface CompiledSFC {
 export interface Info {
   id: string
   filename: string
+}
+export interface EsmCompilerArgs {
+  descriptor: SFCDescriptor
+  info: Info
 }

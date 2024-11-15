@@ -1,10 +1,10 @@
 export interface generatorOptions {
   id: string
-  appName?: string
-  isScoped?: boolean
-  mount?: string
+  appName: string
+  isScoped: boolean
+  mount: string
 }
-export function generator({ id, appName = id, isScoped = false, mount = '#app' }: generatorOptions) {
+export function generator({ id, appName, isScoped, mount }: generatorOptions) {
   return {
     initCode: `let ${appName} = {}` as const,
     createAppCode: `
