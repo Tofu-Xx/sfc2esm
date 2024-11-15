@@ -1,7 +1,7 @@
 import type { SFCDescriptor, SFCTemplateBlock } from '@vue/compiler-sfc'
 import { compileTemplate } from '@vue/compiler-sfc'
 
-// /*  */const __IS_DEV__ = false
+/*  */const __IS_DEV__ = false
 export function templateCompiler(descriptor: SFCDescriptor, id: string, filename: string) {
   const sfcTemplateCompileResults = compileTemplate({
     id,
