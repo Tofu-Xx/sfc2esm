@@ -13,7 +13,13 @@
     "url": "git+https://github.com/tofu-xx/sfc2esm.git"
   },
   "bugs": "https://github.com/tofu-xx/sfc2esm/issues",
-  "keywords": ["vuejs", "vue", "converter", "sfc", "esm"],
+  "keywords": [
+    "vuejs",
+    "vue",
+    "converter",
+    "sfc",
+    "esm"
+  ],
   "exports": {
     ".": {
       "types": "./dist/main.d.ts",
@@ -49,7 +55,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vue/compiler-sfc": "^3.5.12",
+    "@vue/compiler-sfc": "^3.5.13",
     "jsdom": "^25.0.1"
   },
   "devDependencies": {
