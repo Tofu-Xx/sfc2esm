@@ -5,7 +5,7 @@ import { scriptTransformer, stylesTransformer, templateTransformer } from '@/tra
 export interface Options {
   id?: string
   appName?: string
-  cache: Record<string, ConvertedResult>
+  cache?: Record<string, ConvertedResult>
 }
 interface ConvertedResult {
   code: {
@@ -15,7 +15,7 @@ interface ConvertedResult {
   }
   isScoped: boolean
 }
-export function convertor(sfcSource: string, { id = 'sfc2esm', appName = id, cache }: Options = { cache: {} }) {
+export function convertor(sfcSource: string, { id = 'sfc2esm', appName = id, cache = {} }: Options = { }) {
   if (cache[sfcSource])
     return cache[sfcSource]
   const { isScoped, compiled: c } = compilerSfc(sfcSource, id)
