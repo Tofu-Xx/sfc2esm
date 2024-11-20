@@ -1,7 +1,8 @@
 <h1 align='center'>
   sfc2esm
-  <a href="https://npmjs.com/package/setupin"><img src="https://img.shields.io/npm/v/setupin?color=orange"></a>
 </h1>
+
+![logo](./docs/sfc2esm.png)
 
 <br>
 
@@ -11,9 +12,9 @@
 
 <br>
 
-### 关于各种Vue SFC源码转换的方法
+关于各种Vue SFC源码转换的方法
 
-dependencies: [@vue/compiler-sfc](https://github.com/vuejs/core/tree/main/packages/compiler-sfc#readme)
+## API
 
 ```ts
 export interface Options {
@@ -36,3 +37,18 @@ export declare function useXxx2x({ id, appName }?: Options): {
 ## 谁在用这个？
 
 - [setupin](../../../setupin)
+
+<br>
+
+<p align='right'>
+  logo by:
+  <a href="https://github.com/xiaoluoboding/vue-sfc2esm">
+    xiaoluoboding/vue-sfc2esm
+  </a>
+</p>
+<p align='right'>
+  dependencies:
+  <a href="https://github.com/vuejs/core/tree/main/packages/compiler-sfc#readme">
+    @vue/compiler-sfc
+  </a>
+</p>
