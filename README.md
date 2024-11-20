@@ -32,3 +32,7 @@ export declare function useXxx2x({ id, appName }?: Options): {
   }
 }
 ```
+
+## Who is using this?
+
+- [setupin](../../../setupin)

@@ -32,3 +32,7 @@ export declare function useXxx2x({ id, appName }?: Options): {
   }
 }
 ```
+
+## 谁在用这个？
+
+- [setupin](../../../setupin)
