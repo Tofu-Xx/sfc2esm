@@ -36,14 +36,18 @@ export declare function useXxx2x({ id, appName }?: Options): {
 
 ## Who is using this?
 
-- [setupin](../../../setupin)
+<a href="../../../setupin">
+  <img src="https://raw.githubusercontent.com/Tofu-Xx/setupin/refs/heads/main/public/logo.svg" width="100" alt="setupin">
+</a>
+
+1. [setupin](../../../setupin)
 
 <br>
 
 <p align='right'>
   logo by:
   <a href="https://github.com/xiaoluoboding/vue-sfc2esm">
-    xiaoluoboding/vue-sfc2esm
+    vue-sfc2esm
   </a>
 </p>
 <p align='right'>
