@@ -40,7 +40,7 @@ export declare function useXxx2x({ id, appName }?: Options): {
   <img src="https://raw.githubusercontent.com/Tofu-Xx/setupin/refs/heads/main/public/logo.svg" width="100" alt="setupin">
 </a>
 
-1. [setupin](../../../setupin)
+ [setupin](../../../setupin)
 
 <br>
 
