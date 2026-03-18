@@ -12,25 +12,19 @@
 
 <br>
 
-About various Vue SFC source code conversion methods
+Convert the Vue SFC source code to the code in browser esm format
 
 ## API
 
 ```ts
+export declare function sfc2esm(sfcSource: string, { id, appName, mount }: Options): {
+  esmCode: string
+  cssCode: string
+}
 export interface Options {
   id?: string
   appName?: string
-}
-export declare function useXxx2x({ id, appName }?: Options): {
-  scr2app: (scriptSource: string, setup?: boolean) => string
-  tem2render: (templateSource: string) => string
-  sty2css: (styleSource: string, scoped?: boolean) => string
-  sfc2x: (sfcSource: string, mount?: string) => {
-    esm: string
-    app: string
-    render: string
-    css: string
-  }
+  mount?: string
 }
 ```
 
