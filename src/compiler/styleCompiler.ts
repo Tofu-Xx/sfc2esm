@@ -1,4 +1,5 @@
-import { compileStyle, type SFCStyleBlock } from '@vue/compiler-sfc'
+import type { SFCStyleBlock } from '@vue/compiler-sfc'
+import { compileStyle } from '@vue/compiler-sfc'
 /**
  * 编译 SFC 的 <style>，生成可注入到页面的 CSS 结果。
  *
