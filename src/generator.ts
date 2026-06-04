@@ -29,18 +29,18 @@
  * })
  *
  * // 生成：
- * // let App = {}
+ * // let App = Object.create(null)
  * // App.__scopeId = "data-v-abc"
  * // createApp(...).mount('#app')
  */
-export function generator(options: generatorOptions): {
+export function generator(options: Options): {
   initCode: string
   createAppCode: string
   scopeIdCode: string
 }
-export function generator({ id, appName, isScoped, mount }: generatorOptions) {
+export function generator({ id, appName, isScoped, mount }: Options) {
   return {
-    initCode: `let ${appName} = {}` as const,
+    initCode: `let ${appName} = Object.create(null)`,
     createAppCode: `
       import { createApp as _createApp, defineComponent as _defineComponent, h as _h, Suspense as _Suspense } from 'vue'
       _createApp(_defineComponent(
@@ -51,11 +51,11 @@ export function generator({ id, appName, isScoped, mount }: generatorOptions) {
         })
         : ${appName}
       )).mount("${mount}")
-    ` as const,
-    scopeIdCode: isScoped ? (`${appName}.__scopeId = "data-v-${id}"` as const) : '' as const,
+    `,
+    scopeIdCode: isScoped ? (`${appName}.__scopeId = "data-v-${id}"`) : '',
   }
 }
-export interface generatorOptions {
+export interface Options {
   id: string
   appName: string
   isScoped: boolean
