@@ -55,8 +55,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vue/compiler-sfc": "^3.5.13",
-    "up": "^1.0.2"
+    "@vue/compiler-sfc": "^3.5.13"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^8.2.0",
@@ -69,6 +68,7 @@
     "taze": "^0.18.0",
     "tsc": "^2.0.4",
     "typescript": "^5.7.2",
+    "up": "^1.0.2",
     "vite": "^8.0.8",
     "vite-plugin-dts": "^4.5.4"
   }
